@@ -13,6 +13,7 @@ const CountriesCardContainer = ({ data, isFetched }: Props) => {
     return (
       <div className="flex h-[10rem] items-center">
         <CircularProgress
+          aria-label="Cargando"
           className="flex items-center"
           classNames={{ indicator: "stroke-[rgb(118,196,87)]" }}
         />
