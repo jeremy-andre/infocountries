@@ -44,7 +44,6 @@ const countrySlice = createSlice({
 });
 
 export const {
-  addCountries,
   changeStartPage,
   // Filters
   addFilterSearch,
