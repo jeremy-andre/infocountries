@@ -8,6 +8,16 @@ const inputSchema = z.object({
   // Otros campos si es necesario
 });
 
+interface NameFilter {
+  [key: string]: string;
+}
+
+interface CountryFilter {
+  subregion?: string;
+  continent?: string;
+  name?: NameFilter;
+};
+
 export const countryRouter = createTRPCRouter({
   getAll: publicProcedure.query(({ ctx }) => {
     const countries = ctx.db.country.findMany();
@@ -26,14 +36,24 @@ export const countryRouter = createTRPCRouter({
     }),
   getCountries: publicProcedure.input(inputSchema).query(({ ctx, input }) => {
     // Aplicar los filtros en la consulta
+    const where: CountryFilter = {};
+
+    if (input.subregion) {
+      where.subregion = input.subregion;
+    }
+
+    if (input.continent) {
+      where.continent = input.continent;
+    }
+
+    if (input.name) {
+      where.name = {
+        contains: input.name,
+      };
+    }
+
     const countries = ctx.db.country.findMany({
-      where: {
-        subregion: input.subregion ?? undefined,
-        continent: input.continent ?? undefined,
-        name: {
-          contains: input.name ?? undefined,
-        },
-      },
+      where,
     });
 
     return countries;
