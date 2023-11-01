@@ -8,9 +8,7 @@ const inputSchema = z.object({
   // Otros campos si es necesario
 });
 
-interface NameFilter {
-  [key: string]: string;
-}
+type NameFilter = Record<string, string>;
 
 interface CountryFilter {
   subregion?: string;
