@@ -2,9 +2,7 @@ import { ThemeSwitcher } from "./ThemeSwitcher";
 import Link from "next/link";
 import { BsInfo } from "react-icons/bs";
 
-type Props = {};
-
-const NavBar = (props: Props) => {
+const NavBar = () => {
   return (
     <div className="fixed z-50 flex h-[3.5rem] w-full max-w-[125rem] items-center justify-center bg-white px-4 py-1 transition dark:bg-blackRGB10">
       <Link

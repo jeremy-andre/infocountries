@@ -1,4 +1,3 @@
-import { CiSearch } from "react-icons/ci";
 import { useAppDispatch, useAppSelector } from "~/redux/hooks";
 import { addFilterSearch } from "~/redux/reducers/countryReducer";
 

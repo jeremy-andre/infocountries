@@ -13,9 +13,7 @@ import {
   clearFilters,
 } from "~/redux/reducers/countryReducer";
 
-import CountriesOrder from "../CountriesOrder";
-
-import { region, Orden, continent } from "./data";
+import { region, continent } from "./data";
 import SelectUI from "~/components/ui/Select";
 
 import { useMediaQuery } from "react-responsive";
@@ -49,9 +47,6 @@ const CountriesFilter = () => {
   const handleClearFilters = () => {
     dispatch(clearFilters());
   };
-
-  // responsive
-  const isMd = useMediaQuery({ query: "(min-width: 768px)" });
 
   const options = [
     { value: "asc", label: "A-z" },

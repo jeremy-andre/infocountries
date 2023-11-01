@@ -19,7 +19,6 @@ const SelectUI: React.FC<CustomSelectProps> = ({
   options,
   defaultOption,
   onOptionChange,
-  label,
   classname,
 }) => {
   // transform value in label to persist default value with label

@@ -2,7 +2,6 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  countries: [],
   // Filters
   filterRegion: "",
   filterContinent: "",
@@ -18,9 +17,6 @@ const countrySlice = createSlice({
   name: "country",
   initialState,
   reducers: {
-    addCountries(state, action) {
-      state.countries = action.payload;
-    },
     changeStartPage(state, action: PayloadAction<number>) {
       state.startPage = action.payload * 10;
     },

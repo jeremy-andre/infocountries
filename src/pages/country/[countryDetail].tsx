@@ -5,7 +5,7 @@ import { CircularProgress } from "@nextui-org/react";
 import { RiArrowGoBackLine } from "react-icons/ri";
 import Link from "next/link";
 
-export default function countryDetail() {
+export default function CountryDetail() {
   const router = useRouter();
   const countryDetail = router.query.countryDetail?.toString() ?? "";
 
@@ -28,7 +28,7 @@ export default function countryDetail() {
         <Link href={`/`} className="absolute left-2 top-0 mt-[4rem] bg-lime-500 p-2 rounded-md">
           <RiArrowGoBackLine className="text-black"/>
         </Link>
-        <img src={country?.image} className="w-full max-w-[35rem] " />
+        <img src={country?.image} className="w-full max-w-[35rem]" alt="CountryimagenDetail" />
         <div className="flex w-full max-w-[25rem] flex-col gap-6 bg-white transition dark:bg-blackRGB10">
           <div className="bg-white transition dark:bg-blackRGB10">
             <h1 className=" text-center text-[3rem] ">{country?.name}</h1>

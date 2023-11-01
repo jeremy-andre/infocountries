@@ -28,10 +28,10 @@ export const countryRouter = createTRPCRouter({
     // Aplicar los filtros en la consulta
     const countries = ctx.db.country.findMany({
       where: {
-        subregion: input.subregion || undefined,
-        continent: input.continent || undefined,
+        subregion: input.subregion ?? undefined,
+        continent: input.continent ?? undefined,
         name: {
-          contains: input.name || undefined,
+          contains: input.name ?? undefined,
         },
       },
     });
